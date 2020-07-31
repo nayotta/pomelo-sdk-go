@@ -33,6 +33,7 @@ func (s *PomeloSDKTestSuite) TestSendSMS() {
 
 		body := map[string]interface{}{}
 		err = json.Unmarshal(buf, &body)
+		s.Require().Nil(err)
 
 		bodyx := objx.New(body)
 		s.Equal(numbers[0], bodyx.Get("phoneNumberSet[0]").String())
